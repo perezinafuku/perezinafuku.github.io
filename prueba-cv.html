@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tania Pérez Inafuku — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --color-bg: #FAF9F5;
+    --color-panel: #F2F0E8;
+    --color-ink: #1E2A2E;
+    --color-ink-soft: #4A5A5E;
+    --color-line: #D8D4C6;
+    --color-teal: #2F6E68;
+    --color-teal-soft: #E4EEEC;
+    --color-gold: #A9812E;
+    --font-display: 'Source Serif 4', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 15.5px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 32px 100px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 56px;
+    position: relative;
+  }
+
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before{
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 1px;
+    background: var(--color-teal);
+  }
+
+  h1{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.3rem, 6vw, 3.1rem);
+    line-height: 1.05;
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+  }
+  h1 em{
+    font-style: italic;
+    color: var(--color-teal);
+  }
+
+  .contact-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 22px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--color-ink-soft);
+    padding-top: 6px;
+    border-top: 1px solid var(--color-line);
+  }
+  .contact-row a{ color: var(--color-ink-soft); text-decoration: none; }
+  .contact-row a:hover, .contact-row a:focus-visible{ color: var(--color-teal); }
+  .contact-row span{ white-space: nowrap; }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  section{ margin-bottom: 48px; }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+  .section-head .idx{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-gold);
+    letter-spacing: 0.05em;
+  }
+  .section-head h2{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: var(--color-ink);
+  }
+  .section-head::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--color-line);
+  }
+
+  /* ---------- TIMELINE (education / experience) ---------- */
+  .timeline{
+    position: relative;
+    padding-left: 108px;
+  }
+  .timeline::before{
+    content: "";
+    position: absolute;
+    left: 92px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--color-line);
+  }
+
+  .entry{
+    position: relative;
+    padding-bottom: 34px;
+  }
+  .entry:last-child{ padding-bottom: 0; }
+
+  .entry .date{
+    position: absolute;
+    left: -108px;
+    top: 2px;
+    width: 92px;
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--color-teal);
+    line-height: 1.4;
+  }
+
+  .entry::before{
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--color-teal);
+  }
+
+  .entry .org{
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--color-ink);
+  }
+  .entry .place{
+    font-weight: 400;
+    color: var(--color-ink-soft);
+  }
+  .entry .role{
+    font-style: italic;
+    font-family: var(--font-display);
+    color: var(--color-ink-soft);
+    margin-top: 2px;
+    font-size: 15px;
+  }
+
+  .entry ul{
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .entry ul li{
+    position: relative;
+    padding-left: 16px;
+    color: var(--color-ink-soft);
+    font-size: 14.3px;
+    line-height: 1.55;
+  }
+  .entry ul li::before{
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+  }
+
+  /* ---------- RESEARCH PROJECTS ---------- */
+  .research-list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .research-item{
+    background: var(--color-panel);
+    border-left: 2px solid var(--color-gold);
+    padding: 16px 20px;
+  }
+  .research-item .title{
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15.5px;
+    color: var(--color-ink);
+  }
+  .research-item .meta{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-ink-soft);
+    margin-top: 4px;
+  }
+
+  /* ---------- SKILLS GRID ---------- */
+  .skills-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 32px;
+  }
+  .skill-block .label{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    margin-bottom: 6px;
+  }
+  .skill-block .value{
+    color: var(--color-ink-soft);
+    font-size: 14.3px;
+    line-height: 1.55;
+  }
+
+  .bars{ display:flex; flex-direction:column; gap:9px; margin-top:2px; }
+  .bar-row{ display:flex; align-items:center; gap:10px; }
+  .bar-row .name{ font-size:13.5px; color: var(--color-ink); width: 78px; flex-shrink:0; }
+  .bar-track{ flex:1; height:5px; background: var(--color-panel); border-radius:3px; overflow:hidden; }
+  .bar-fill{ height:100%; background: var(--color-teal); border-radius:3px; }
+
+  /* ---------- REFERENCES ---------- */
+  .refs-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 32px;
+  }
+  .ref-item .name{
+    font-weight: 600;
+    font-size: 14.3px;
+    color: var(--color-ink);
+  }
+  .ref-item .role{
+    font-size: 13px;
+    color: var(--color-ink-soft);
+    margin-top: 2px;
+    line-height: 1.45;
+  }
+  .ref-item .email{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-teal);
+    margin-top: 4px;
+    display: inline-block;
+    word-break: break-all;
+  }
+  .ref-item .email:hover{ text-decoration: underline; }
+
+  footer{
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-line);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-ink-soft);
+    text-align: center;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 620px){
+    .page{ padding: 48px 20px 80px; }
+    .timeline{ padding-left: 0; }
+    .timeline::before{ left: 5px; }
+    .entry{ padding-left: 26px; }
+    .entry .date{ position: static; text-align: left; width: auto; margin-bottom: 4px; display: block; }
+    .entry::before{ left: 0; top: 2px; }
+    .skills-grid, .refs-grid{ grid-template-columns: 1fr; }
+  }
+
+  @media print{
+    body{ background: #fff; }
+    .page{ padding: 20px 10px; max-width: 100%; }
+    a{ color: inherit !important; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Curriculum Vitae</div>
+    <h1>Tania Megumi<br>Pérez <em>Inafuku</em></h1>
+    <div class="contact-row">
+      <span>San Juan de Miraflores, Lima, Perú</span>
+      <span>(+51) 969 915 123</span>
+      <span><a href="mailto:tmperez@uc.cl">tmperez@uc.cl</a></span>
+      <span><a href="mailto:perez.inafuku@gmail.com">perez.inafuku@gmail.com</a></span>
+    </div>
+  </header>
+
+  <!-- EDUCACIÓN -->
+  <section id="educacion">
+    <div class="section-head"><span class="idx">01</span><h2>Educación y formación</h2></div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="date">2017 —<br>2018</div>
+        <div class="org">Pontificia Universidad Católica de Chile <span class="place">· Santiago, Chile</span></div>
+        <div class="role">Magíster en Economía (Titulada)</div>
+      </div>
+
+      <div class="entry">
+        <div class="date">2011 —<br>2015</div>
+        <div class="org">Universidad Nacional Agraria La Molina <span class="place">· Lima, Perú</span></div>
+        <div class="role">Bachiller en Economía</div>
+        <ul>
+          <li>Quinto Superior — Primer Puesto</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="date">Ene —<br>Mar 2015</div>
+        <div class="org">Banco Central de Reserva del Perú <span class="place">· Lima, Perú</span></div>
+        <div class="role">LXII Curso de Extensión Universitaria de Economía</div>
+        <ul>
+          <li>Formación especializada a nivel de postgrado en economía; programa curricular de 14 asignaturas aprobado.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="section-head"><span class="idx">02</span><h2>Experiencia laboral</h2></div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="date">Feb 2019 —<br>Actualidad</div>
+        <div class="org">Innovations for Poverty Action — IPA <span class="place">· Lima, Perú y CDMX, México</span></div>
+        <div class="role">Asociada de investigación</div>
+        <ul>
+          <li>Implementación de la encuesta final en campo del proyecto "Community Monitoring and Technology Transfer to Prevent Deforestation: A Field Experiment in the Peruvian Amazon", gestionando presupuestos, cronograma y recursos humanos, además de la programación de cuestionarios en SurveyCTO bajo protocolos de calidad.</li>
+          <li>Implementación de la encuesta de línea base de un estudio RCT sobre Calidad del Aire en la CDMX: gestión de actividades de campo, control de calidad de los datos y retroalimentación constante a los equipos de campo.</li>
+          <li>Preparación de reportes diarios y semanales de recolección de datos para los investigadores del proyecto.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="date">Sep 2015 —<br>Feb 2017</div>
+        <div class="org">Centro de Investigación de la Universidad del Pacífico <span class="place">· Lima, Perú</span></div>
+        <div class="role">Asistente de investigación</div>
+        <ul>
+          <li>Revisión de literatura especializada y análisis de más de 1 millón de observaciones sobre impactos indirectos de largo plazo de las fluctuaciones climáticas.</li>
+          <li>Revisión de literatura sobre efectos de los colegios de alto rendimiento (COAR's) en los alumnos y su entorno.</li>
+          <li>Revisión de literatura sobre el impacto del acceso a computadoras y paquetes informáticos educativos en la educación.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="date">Ago —<br>Oct 2014</div>
+        <div class="org">Depto. de Economía, Universidad Nacional Agraria La Molina <span class="place">· Lima, Perú</span></div>
+        <div class="role">Analista económico</div>
+        <ul>
+          <li>Recolección de datos estadísticos del sector pecuario para estimar emisiones de gases de efecto invernadero (1990–2013).</li>
+          <li>Análisis de las principales medidas de política y hechos estilizados del período 1990–2013.</li>
+          <li>Identificación de cadenas de valor y actores en la producción de quinua en el Perú.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="date">Ene —<br>Jun 2014</div>
+        <div class="org">Banco Central de Reserva del Perú <span class="place">· Lima, Perú</span></div>
+        <div class="role">Practicante Pre-profesional</div>
+        <ul>
+          <li>Elaboración de informes diarios sobre la coyuntura de inversión privada, producción y finanzas empresariales.</li>
+          <li>Seguimiento del estado de los proyectos licitados por ProInversión.</li>
+          <li>Análisis de publicaciones, boletines y reportes de organismos públicos vinculados a la promoción de la inversión privada.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="date">Mar —<br>Dic 2013</div>
+        <div class="org">Depto. de Economía, Universidad Nacional Agraria La Molina <span class="place">· Lima, Perú</span></div>
+        <div class="role">Apoyo en la docencia e investigación</div>
+        <ul>
+          <li>Apoyo en docencia, administración e investigación: análisis de series históricas de papa, maíz amarillo duro y trigo.</li>
+          <li>Apoyo en el proceso de Acreditación Universitaria.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROYECTOS DE INVESTIGACIÓN -->
+  <section id="investigacion">
+    <div class="section-head"><span class="idx">03</span><h2>Proyectos de investigación</h2></div>
+    <div class="research-list">
+      <div class="research-item">
+        <div class="title">"Mujeres en la política local. Una evidencia para municipios peruanos."</div>
+        <div class="meta">Tesis de magíster</div>
+      </div>
+      <div class="research-item">
+        <div class="title">"Weather Fluctuations and Human Capital Formation: Evidence from Peru"</div>
+        <div class="meta">Con Manuel Barrón y Sam Heft-Neal</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPACIDADES -->
+  <section id="capacidades">
+    <div class="section-head"><span class="idx">04</span><h2>Capacidades y competencias</h2></div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="label">Capacidad analítica</div>
+        <div class="value">Síntesis y solución de problemas del entorno laboral.</div>
+      </div>
+      <div class="skill-block">
+        <div class="label">Capacidad organizativa</div>
+        <div class="value">Trabajo en equipo orientado a resultados, con comunicación asertiva.</div>
+      </div>
+      <div class="skill-block" style="grid-column: 1 / -1;">
+        <div class="label">Habilidades informáticas</div>
+        <div class="bars">
+          <div class="bar-row"><span class="name">Stata</span><div class="bar-track"><div class="bar-fill" style="width:78%;"></div></div></div>
+          <div class="bar-row"><span class="name">Eviews</span><div class="bar-track"><div class="bar-fill" style="width:78%;"></div></div></div>
+          <div class="bar-row"><span class="name">LaTeX</span><div class="bar-track"><div class="bar-fill" style="width:55%;"></div></div></div>
+          <div class="bar-row"><span class="name">SPSS</span><div class="bar-track"><div class="bar-fill" style="width:32%;"></div></div></div>
+          <div class="bar-row"><span class="name">R</span><div class="bar-track"><div class="bar-fill" style="width:32%;"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="label">Idiomas</div>
+        <div class="value">Inglés — Avanzado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCIAS -->
+  <section id="referencias">
+    <div class="section-head"><span class="idx">05</span><h2>Referencias</h2></div>
+    <div class="refs-grid">
+      <div class="ref-item">
+        <div class="name">Manuel Fernando Barrón Ayllón, Ph.D.</div>
+        <div class="role">Catedrático, Departamento Académico de Economía — Universidad del Pacífico</div>
+        <a class="email" href="mailto:mf.barrona@up.edu.pe">mf.barrona@up.edu.pe</a>
+      </div>
+      <div class="ref-item">
+        <div class="name">Dr. Waldemar Mercado Curi</div>
+        <div class="role">Catedrático, Facultad de Economía y Planificación — UNALM</div>
+        <a class="email" href="mailto:wmercado@lamolina.edu.pe">wmercado@lamolina.edu.pe</a>
+      </div>
+      <div class="ref-item">
+        <div class="name">Mg. Carlos Mendiburu Díaz</div>
+        <div class="role">Jefe del Depto. de Análisis de Coyuntura, Gerencia de Información y Análisis Económico — BCRP</div>
+        <a class="email" href="mailto:carlos.mendiburu@bcrp.gob.pe">carlos.mendiburu@bcrp.gob.pe</a>
+      </div>
+      <div class="ref-item">
+        <div class="name">Sra. Liliana Alanya Pizarro</div>
+        <div class="role">Especialista, Departamento de Programación Financiera — BCRP</div>
+        <a class="email" href="mailto:liliana.alanya@bcrp.gob.pe">liliana.alanya@bcrp.gob.pe</a>
+      </div>
+      <div class="ref-item">
+        <div class="name">Mg. Raquel Gómez Oscorima</div>
+        <div class="role">Catedrática, Facultad de Economía y Planificación — UNALM</div>
+        <a class="email" href="mailto:rgo@lamolina.edu.pe">rgo@lamolina.edu.pe</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Actualizado — agosto 2026</footer>
+
+</div>
+</body>
+</html>
