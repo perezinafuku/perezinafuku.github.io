@@ -251,11 +251,33 @@
     line-height: 1.55;
   }
 
-  .bars{ display:flex; flex-direction:column; gap:9px; margin-top:2px; }
-  .bar-row{ display:flex; align-items:center; gap:10px; }
-  .bar-row .name{ font-size:13.5px; color: var(--color-ink); width: 78px; flex-shrink:0; }
-  .bar-track{ flex:1; height:5px; background: var(--color-panel); border-radius:3px; overflow:hidden; }
-  .bar-fill{ height:100%; background: var(--color-teal); border-radius:3px; }
+  .tier-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 4px;
+  }
+  .tier-label{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .tier-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .tier-list li{
+    font-size: 13.5px;
+    color: var(--color-ink-soft);
+    line-height: 1.45;
+  }
 
   /* ---------- REFERENCES ---------- */
   .refs-grid{
@@ -303,6 +325,7 @@
     .entry .date{ position: static; text-align: left; width: auto; margin-bottom: 4px; display: block; }
     .entry::before{ left: 0; top: 2px; }
     .skills-grid, .refs-grid{ grid-template-columns: 1fr; }
+    .tier-grid{ grid-template-columns: 1fr; gap: 18px; }
   }
 
   @media print{
@@ -488,7 +511,7 @@
     </div>
   </section>
 
-   <!-- CAPACIDADES -->
+  <!-- CAPACIDADES -->
   <section id="capacidades">
     <div class="section-head"><span class="idx">04</span><h2>Capacidades y competencias</h2></div>
     <div class="skills-grid">
